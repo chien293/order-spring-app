@@ -1,0 +1,12 @@
+
+services:
+  mongodb:
+    image: mysql:8.3.0
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./docker/mysql/initDB.sql:/docker-entrypoint-initdb.d/initDB.sql
